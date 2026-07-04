@@ -4,7 +4,7 @@ class Q56
   public static void main(String as[])throws Exception
    {
      DataInputStream ob=new DataInputStream(System.in);
-     int n,hold=0,pos=1;
+     int n,hold=0,pos=1,du=1;
      System.out.println("Enter size of Array : ");
      n=Integer.parseInt(ob.readLine());
      int ar[]=new int[n];
@@ -25,22 +25,22 @@ class Q56
     {
       for(int j=i+1;j<n;j++)
         {
+          pos=1;
             if(ar[i]==ar[j])
            {
+             du=1;
              for(int k=0;k<hold;k++)
                {
                 if(i==ar2[k])
                     pos=0;
                }
-           }
-       }
-       if(pos==0)
-       {
-           pos=1;
-          break;
-       }
-       else
-          System.out.println(ar[i]);
-    }
+             if(pos==0)
+               break;
+            }
+          }          
+            if(pos==1&&du==1)
+             System.out.println(ar[i]);
+          du=0;
+      }
   }
 }
