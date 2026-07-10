@@ -9,6 +9,15 @@ class Q22
     double sum2=0.0;
     System.out.println("Enter a Binary Number : ");
     str1=ob.readLine();
+    for(int j=0;j<str1.length();j++)
+    {
+        char c=str1.charAt(j);
+        if(!(c=='0'||c=='1'||c=='.'))
+        {
+          System.out.println("Entered number is not Binary ");
+          System.exit(0);      
+        }
+      }
     for(j1=0;j1<str1.length();j1++)
     {
         char c=str1.charAt(j1);
@@ -27,7 +36,7 @@ class Q22
           sum1=sum1+j*(int)(Math.pow(2,hold1++));
           num1=num1/10;
         }
-        System.out.println("Corresponding Binary Number is :\n"+sum1);
+        System.out.println("Corresponding Decimal Number is :\n"+sum1);
     }
 
     else
@@ -61,7 +70,7 @@ class Q22
         str3=str3+c;
       }
        num2=Integer.parseInt(str3);
-       hold2=-((""+num2).length());
+       hold2=-(str3.length());
         while(num2>0)
        {
         int j=num2%10;
